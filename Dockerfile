@@ -7,7 +7,7 @@ USER openvscode-server
 RUN /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 RUN echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/workspace/.profile
 RUN eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-RUN brew install curl
+RUN /home/linuxbrew/.linuxbrew/bin/brew install curl
 ENV OPENVSCODE_SERVER_ROOT=${OPENVSCODE_SERVER_ROOT}
 ENV TOKEN=${TOKEN}
 ENV PORT=${PORT}
