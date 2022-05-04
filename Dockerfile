@@ -5,6 +5,8 @@ USER root
 RUN apt update && apt install -y openssl build-essential procps curl file git bash
 USER openvscode-server
 RUN /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+RUN echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/workspace/.profile
+RUN eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 ENV OPENVSCODE_SERVER_ROOT=${OPENVSCODE_SERVER_ROOT}
 ENV TOKEN=${TOKEN}
 ENV PORT=${PORT}
