@@ -2,7 +2,7 @@
 ARG PORT TOKEN
 FROM gitpod/openvscode-server:latest
 USER root
-RUN apt update && apt install -y openssl procps curl file git bash
+RUN apt update && apt upgrade -y && apt install -y openssl procps curl file git bash
 USER openvscode-server
 ENV OPENVSCODE_SERVER_ROOT=${OPENVSCODE_SERVER_ROOT}
 ENV TOKEN=${TOKEN}
