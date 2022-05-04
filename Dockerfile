@@ -2,7 +2,7 @@
 ARG PORT TOKEN
 FROM gitpod/openvscode-server:latest
 USER root
-RUN apt-get install -y openssl build-essential procps curl file git bash
+RUN apt update && apt install -y openssl build-essential procps curl file git bash
 USER openvscode-server
 RUN /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ENV OPENVSCODE_SERVER_ROOT=${OPENVSCODE_SERVER_ROOT}
